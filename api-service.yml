@@ -1,0 +1,19 @@
+
+server:
+  port: 8080
+
+spring:
+  cassandra:
+    contact-points:
+      - cassandra-1
+      - cassandra-2
+      - cassandra-3
+
+    port: 9042
+    keyspace-name: restaurant
+    local-datacenter: dc1
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://registry-server:8761/eureka
