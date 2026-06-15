@@ -2,6 +2,10 @@ server:
   port: 8081
 
 spring:
+  application:
+    name: api-gateway
+  main:
+    web-application-type: reactive
   cloud:
     gateway:
       discovery:
@@ -10,7 +14,7 @@ spring:
           lower-case-service-id: true
       routes: 
         - id: api-service
-          uri: lb://API-SERVICE
+          uri: lb://api-service
           predicates:
             - Path=/api/**
 
@@ -18,3 +22,5 @@ eureka:
   client:
     service-url:
       defaultZone: http://registry-server:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
