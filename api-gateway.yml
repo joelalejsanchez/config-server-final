@@ -8,6 +8,8 @@ spring:
     web-application-type: reactive
   cloud:
     gateway:
+      forwarded:
+         enabled: false
       discovery:
         locator:
           enabled: true
