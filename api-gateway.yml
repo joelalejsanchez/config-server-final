@@ -8,12 +8,14 @@ spring:
     web-application-type: reactive
   cloud:
     gateway:
-      x-forwarded:
-         enabled: false
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: false
+        server:
+          webflux:
+            discovery:
+              locator:
+                enabled: true
+                lower-case-service-id: false
+            x-forwarded:
+              enabled: false
       routes: 
         - id: api-service
           uri: lb://API-SERVICE
