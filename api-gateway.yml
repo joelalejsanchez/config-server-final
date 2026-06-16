@@ -8,7 +8,7 @@ spring:
     web-application-type: reactive
   cloud:
     gateway:
-      forwarded:
+      x-forwarded:
          enabled: false
       discovery:
         locator:
